@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Perfect games</title>
+  <link href="https://store.steampowered.com/favicon.ico" rel="shortcut icon" type="image/x-icon" >
+  <link href="https://steamstore-a.akamaihd.net/public/shared/css/motiva_sans.css?v=FAK4O46_mOLB" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    let startYear = 2012;
+    let endYear = new Date().getFullYear();
+    let dict = {};
+    let totalCount = 0;
+    let totalYears = 0;
+
+    function main() {
+      for (var i = startYear; i <= endYear; i++) {
+        dict[i] = $(`#year${i}list li`).length;
+        document.getElementById(`year${i}count`).innerHTML = `– ${dict[i]} ${dict[i] == 1 ? "game" : "games"} completed`;
+      }
+      console.log(dict);
+
+      totalYears = Object.keys(dict).length;
+      totalCount = 0;
+      Object.keys(dict).forEach((a) => totalCount += dict[a]);
+
+      document.getElementById('header').innerHTML = `${totalCount} perfect ${totalCount == 1 ? "game" : "games"} in ${totalYears} ${totalYears == 1 ? "year" : "years"}`;
+      document.getElementById('yearsinterval').innerHTML = `${startYear}-${endYear}`;
+
+      for (var i = startYear; i <= endYear; i++) {
+        var x = 0;
+        Object.keys(dict).forEach((a) => x += (a <= i) ? dict[a] : 0);
+        console.log(`${i}: ${x}`)
+        document.getElementById(`year${i}list`).setAttribute('start', x);
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: #171a21;
+      color: #b8b6b4;
+      font-family: "Motiva Sans", Sans-serif;
+      font-size: 20px;
+    }
+
+    div#content {
+      display:inline-block;
+      margin: 0 auto;
+      min-width: 500px;
+      text-align: left;
+    }
+
+    h1, h2, h3 {
+      color: #5aa9d6;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    div#content ol {
+      padding-inline-start: 0px;
+    }
+
+    div#content ol li a {
+      color: #b8b6b4;
+      display: block;
+      text-decoration: none;
+    }
+
+    div#content ol li a:hover {
+      background-color: #00000040;
+      color: #fff;
+    }
+
+    hr {
+      background-color: #5aa9d6;
+      border-width: 0;
+      color: #5aa9d6;
+      height: 2.5px;
+      margin-top: 0px;
+    }
+
+    /** scrollbar **/
+    ::-webkit-scrollbar {
+      width: 15px;
+      height: 15px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #171a21;
+    }
+
+    ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-corner {
+      background: #5aa9d6;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f94bc;
+    }
+  </style>
+</head>
+
+<body onload="main()" style="text-align: center;">
+
+  <h1 id="header" style="margin-bottom: 0px;"></h1>
+  <p id="yearsinterval" style="margin-top: 0px;"></p>
+
+  <div id="content">
+
+    <h2 style="display:inline;" id="year2025">2025</h2>
+    <p  style="display:inline;" id="year2025count"></p>
+    <hr>
+    <ol id="year2025list" reversed>
+      <li><a href="https://s.team/a/1202900">Assemble with Care</a></li>
+      <li><a href="https://s.team/a/421120">Samorost 3</a></li>
+      <li><a href="https://s.team/a/459820">Crush Crush</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2024">2024</h2>
+    <p  style="display:inline;" id="year2024count"></p>
+    <hr>
+    <ol id="year2024list" reversed>
+      <li><a href="https://s.team/a/1240210"></a>There Is No Game: Wrong Dimension</li>
+      <li><a href="https://s.team/a/936790"></a>Life is Strange: True Colors</li>
+      <li><a href="https://s.team/a/656570"></a>In the Raven Shadow</li>
+      <li><a href="https://s.team/a/1435670"></a>Song of Farca</li>
+      <li><a href="https://s.team/a/1622770"></a>Doors: Paradox</li>
+      <li><a href="https://s.team/a/1903620"></a>Killer Frequency</li>
+      <li><a href="https://s.team/a/1249040"></a>American Arcadia</li>
+      <li><a href="https://s.team/a/2637990"></a>Duck Detective: The Secret Salami</li>
+      <li><a href="https://s.team/a/40720"></a>Samorost 2</li>
+      <li><a href="https://s.team/a/1603640"></a>The House of Da Vinci 3</li>
+      <li><a href="https://s.team/a/1259840"></a>The House of Da Vinci 2</li>
+      <li><a href="https://s.team/a/2019810"></a>Boxes: Lost Fragments</li>
+      <li><a href="https://s.team/a/523650"></a>Lust for Darkness</li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2023">2023</h2>
+    <p  style="display:inline;" id="year2023count"></p>
+    <hr>
+    <ol id="year2023list" reversed>
+      <li><a href="https://s.team/a/1091500">Cyberpunk 2077</a></li>
+      <li><a href="https://s.team/a/795420">The Darkside Detective: A Fumble in the Dark</a></li>
+      <li><a href="https://s.team/a/1927740">Monument Valley 2</a></li>
+      <li><a href="https://s.team/a/1118240">Lake</a></li>
+      <li><a href="https://s.team/a/933860">Discolored</a></li>
+      <li><a href="https://s.team/a/1949030">Sherlock Holmes The Awakened</a></li>
+      <li><a href="https://s.team/a/1927720">Monument Valley</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2022">2022</h2>
+    <p  style="display:inline;" id="year2022count"></p>
+    <hr>
+    <ol id="year2022list" reversed>
+      <li><a href="https://s.team/a/457680">OPUS: The Day We Found Earth</a></li>
+      <li><a href="https://s.team/a/1042490">Call of the Sea</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2021">2021</h2>
+    <p  style="display:inline;" id="year2021count"></p>
+    <hr>
+    <ol id="year2021list" reversed>
+      <li><a href="https://s.team/a/1137300">Sherlock Holmes Chapter One</a></li>
+      <li><a href="https://s.team/a/1373430">Leisure Suit Larry - Wet Dreams Dry Twice</a></li>
+      <li><a href="https://s.team/a/350640">Sherlock Holmes: The Devil's Daughter</a></li>
+      <li><a href="https://s.team/a/1289310">Helltaker</a></li>
+      <li><a href="https://s.team/a/828740">Tales of the Neon Sea</a></li>
+      <li><a href="https://s.team/a/1541780">Resident Evil Village Gameplay Demo</a></li>
+      <li><a href="https://s.team/a/1137350">Filament</a></li>
+      <li><a href="https://s.team/a/233290">Murdered: Soul Suspect</a></li>
+      <li><a href="https://s.team/a/712730">SIMULACRA</a></li>
+      <li><a href="https://s.team/a/631570">Whispers of a Machine</a></li>
+      <li><a href="https://s.team/a/1361320">The Room 4: Old Sins</a></li>
+      <li><a href="https://s.team/a/370910">Kathy Rain</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2020">2020</h2>
+    <p  style="display:inline;" id="year2020count"></p>
+    <hr>
+    <ol id="year2020list" reversed>
+      <li><a href="https://s.team/a/406970">The Uncertain: Last Quiet Day</a></li>
+      <li><a href="https://s.team/a/584990">The Long Reach</a></li>
+      <li><a href="https://s.team/a/1401680">Lust from Beyond: Scarlet</a></li>
+      <li><a href="https://s.team/a/633060">Orwell: Ignorance is Strength</a></li>
+      <li><a href="https://s.team/a/491950">Orwell: Keeping an Eye On You</a></li>
+      <li><a href="https://s.team/a/352520">The Silent Age</a></li>
+      <li><a href="https://s.team/a/801480">Agent A: A puzzle in disguise</a></li>
+      <li><a href="https://s.team/a/1241700">There Is No Game : Jam Edition 2015</a></li>
+      <li><a href="https://s.team/a/765870">Leisure Suit Larry - Wet Dreams Don't Dry</a></li>
+      <li><a href="https://s.team/a/368390">The Darkside Detective</a></li>
+      <li><a href="https://s.team/a/1283220">Devolverland Expo</a></li>
+      <li><a href="https://s.team/a/207610">The Walking Dead</a></li>
+      <li><a href="https://s.team/a/522470">The House of Da Vinci</a></li>
+      <li><a href="https://s.team/a/1090900">Yes, Master!</a></li>
+      <li><a href="https://s.team/a/423880">Carpe Diem</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2019">2019</h2>
+    <p  style="display:inline;" id="year2019count"></p>
+    <hr>
+    <ol id="year2019list" reversed>
+      <li><a href="https://s.team/a/241260">Sherlock Holmes: Crimes and Punishments</a></li>
+      <li><a href="https://s.team/a/812810">missed messages.</a></li>
+      <li><a href="https://s.team/a/725340">Lines X Free</a></li>
+      <li><a href="https://s.team/a/1170820">Lust from Beyond: Prologue</a></li>
+      <li><a href="https://s.team/a/866440">What Never Was</a></li>
+      <li><a href="https://s.team/a/374900">Agatha Christie - The ABC Murders</a></li>
+      <li><a href="https://s.team/a/942970">Unheard</a></li>
+      <li><a href="https://s.team/a/414340">Hellblade: Senua's Sacrifice</a></li>
+      <li><a href="https://s.team/a/205650">The Testament of Sherlock Holmes</a></li>
+      <li><a href="https://s.team/a/770390">Draugen</a></li>
+      <li><a href="https://s.team/a/554620">Life is Strange: Before the Storm</a></li>
+      <li><a href="https://s.team/a/605990">Heart's Medicine - Hospital Heat</a></li>
+      <li><a href="https://s.team/a/494230">Heart's Medicine - Time to Heal</a></li>
+      <li><a href="https://s.team/a/589780">The Red Strings Club</a></li>
+      <li><a href="https://s.team/a/258180">Deus Ex: The Fall</a></li>
+      <li><a href="https://s.team/a/354240">Please, Don't Touch Anything</a></li>
+      <li><a href="https://s.team/a/529590">Please, Don't Touch Anything 3D</a></li>
+      <li><a href="https://s.team/a/961440">RESIDENT EVIL 2 / BIOHAZARD RE:2 "1-Shot Demo"</a></li>
+      <li><a href="https://s.team/a/297020">The Culling Of The Cows</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2018">2018</h2>
+    <p  style="display:inline;" id="year2018count"></p>
+    <hr>
+    <ol id="year2018list" reversed>
+      <li><a href="https://s.team/a/504380">Detective Hayseed - Hollywood</a></li>
+      <li><a href="https://s.team/a/456750">The Room Three</a></li>
+      <li><a href="https://s.team/a/449730">Ahnayro: The Dream World</a></li>
+      <li><a href="https://s.team/a/365450">Hacknet</a></li>
+      <li><a href="https://s.team/a/853500">Quarantine Circular</a></li>
+      <li><a href="https://s.team/a/676820">Subsurface Circular</a></li>
+      <li><a href="https://s.team/a/675260">Batman: The Enemy Within - The Telltale Series</a></li>
+      <li><a href="https://s.team/a/498240">Batman - The Telltale Series</a></li>
+      <li><a href="https://s.team/a/639170">Minecraft: Story Mode - Season Two</a></li>
+      <li><a href="https://s.team/a/533540">MONMUSU</a></li>
+      <li><a href="https://s.team/a/470260">event[0]</a></li>
+      <li><a href="https://s.team/a/571350">DED</a></li>
+      <li><a href="https://s.team/a/343860">Tacoma</a></li>
+      <li><a href="https://s.team/a/242780">Cognition: An Erica Reed Thriller</a></li>
+      <li><a href="https://s.team/a/232430">Gone Home</a></li>
+      <li><a href="https://s.team/a/558420">Stories Untold</a></li>
+      <li><a href="https://s.team/a/602890">hack_me 2</a></li>
+      <li><a href="https://s.team/a/526740">hack_me</a></li>
+      <li><a href="https://s.team/a/862480">The Spiral Scouts</a></li>
+      <li><a href="https://s.team/a/885640">Lynne</a></li>
+      <li><a href="https://s.team/a/892630">Mojo: Hanako</a></li>
+      <li><a href="https://s.team/a/376870">Minecraft: Story Mode - A Telltale Games Series</a></li>
+      <li><a href="https://s.team/a/250320">The Wolf Among Us</a></li>
+      <li><a href="https://s.team/a/331870">AER Memories of Old</a></li>
+      <li><a href="https://s.team/a/874650">XXX Puzzle</a></li>
+      <li><a href="https://s.team/a/269650">Dex</a></li>
+      <li><a href="https://s.team/a/208750">Apotheon</a></li>
+      <li><a href="https://s.team/a/250600">The Plan</a></li>
+      <li><a href="https://s.team/a/483420">Adam Wolfe</a></li>
+      <li><a href="https://s.team/a/540610">Delicious! Pretty Girls Mahjong Solitaire</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2017">2017</h2>
+    <p  style="display:inline;" id="year2017count"></p>
+    <hr>
+    <ol id="year2017list" reversed>
+      <li><a href="https://s.team/a/523780">Emily is Away Too</a></li>
+      <li><a href="https://s.team/a/692920">XXZ</a></li>
+      <li><a href="https://s.team/a/567090">8-Bit Bayonetta</a></li>
+      <li><a href="https://s.team/a/538060">Doodle God: 8-bit Mania</a></li>
+      <li><a href="https://s.team/a/665490">The Monster Inside</a></li>
+      <li><a href="https://s.team/a/598940">Doodle Mafia</a></li>
+      <li><a href="https://s.team/a/431640">Doodle Kingdom</a></li>
+      <li><a href="https://s.team/a/608760">Doodle Devil</a></li>
+      <li><a href="https://s.team/a/562570">Access Denied</a></li>
+      <li><a href="https://s.team/a/499520">The Turing Test</a></li>
+      <li><a href="https://s.team/a/395170">DISTRAINT</a></li>
+      <li><a href="https://s.team/a/348360">Doodle God</a></li>
+      <li><a href="https://s.team/a/339130">Morningstar: Descent to Deadrock</a></li>
+      <li><a href="https://s.team/a/530330">Blameless</a></li>
+      <li><a href="https://s.team/a/72850">The Elder Scrolls V: Skyrim</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2016">2016</h2>
+    <p  style="display:inline;" id="year2016count"></p>
+    <hr>
+    <ol id="year2016list" reversed>
+      <li><a href="https://s.team/a/443580">Antenna</a></li>
+      <li><a href="https://s.team/a/221910">The Stanley Parable</a></li>
+      <li><a href="https://s.team/a/531960">Bloody Walls</a></li>
+      <li><a href="https://s.team/a/461560">Mandagon</a></li>
+      <li><a href="https://s.team/a/372540">The Lost Mythologies</a></li>
+      <li><a href="https://s.team/a/395520">Missing Translation</a></li>
+      <li><a href="https://s.team/a/521340">True or False</a></li>
+      <li><a href="https://s.team/a/417860">Emily is Away</a></li>
+      <li><a href="https://s.team/a/425580">The Room Two</a></li>
+      <li><a href="https://s.team/a/368370">Her Story</a></li>
+      <li><a href="https://s.team/a/330840">Game of Thrones - A Telltale Games Series</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2015">2015</h2>
+    <p  style="display:inline;" id="year2015count"></p>
+    <hr>
+    <ol id="year2015list" reversed>
+      <li><a href="https://s.team/a/288160">The Room</a></li>
+      <li><a href="https://s.team/a/226960">Ironclad Tactics</a></li>
+      <li><a href="https://s.team/a/327410">A Bird Story</a></li>
+    </ol>
+
+    <h2 style="display:inline;" id="year2014">2014</h2>
+    <p  style="display:inline;" id="year2014count"></p>
+    <hr>
+    <ol id="year2014list" reversed>
+    </ol>
+
+    <h2 style="display:inline;" id="year2013">2013</h2>
+    <p  style="display:inline;" id="year2013count"></p>
+    <hr>
+    <ol id="year2013list" reversed>
+    </ol>
+
+    <h2 style="display:inline;" id="year2012">2012</h2>
+    <p  style="display:inline;" id="year2012count"></p>
+    <hr>
+    <ol id="year2012list" reversed>
+    </ol>
+
+  </div>
+</body>
+
+</html>
